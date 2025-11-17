@@ -43,52 +43,52 @@ export default function Research() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12"
+      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
     >
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-4xl font-bold text-slate-800 dark:text-white mb-8"
+        className="text-2xl font-bold text-cursor-text mb-4"
       >
         Research
       </motion.h2>
-      <div className="space-y-8">
+      <div className="space-y-4">
         {researchItems.map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border-l-4 border-green-500 dark:border-green-400"
+            className="bg-cursor-bg rounded-lg p-4 border-l-4 border-cursor-accent border border-cursor-border"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
               <div>
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">
+                <h3 className="text-lg font-bold text-cursor-text mb-1.5">
                   {item.title}
                 </h3>
-                <p className="text-lg text-green-600 dark:text-green-400 font-medium">
+                <p className="text-sm text-cursor-accent font-medium">
                   {item.institution}
                 </p>
               </div>
-              <span className="text-slate-500 dark:text-slate-400 font-medium mt-2 md:mt-0">
+              <span className="text-cursor-textSecondary text-xs font-medium mt-2 md:mt-0">
                 {item.year}
               </span>
             </div>
-            <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+            <p className="text-sm text-cursor-textSecondary mb-3 leading-relaxed">
               {item.description}
             </p>
             {item.publications && item.publications.length > 0 && (
-              <div className="mt-4 pt-4 border-t border-green-200 dark:border-green-800">
-                <h4 className="font-semibold text-slate-700 dark:text-slate-300 mb-2">
+              <div className="mt-3 pt-3 border-t border-cursor-border">
+                <h4 className="font-semibold text-cursor-text text-xs mb-1.5">
                   Publications:
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {item.publications.map((pub, pubIndex) => (
                     <li
                       key={pubIndex}
-                      className="text-sm text-slate-600 dark:text-slate-400 flex items-start"
+                      className="text-xs text-cursor-textSecondary flex items-start"
                     >
-                      <span className="text-green-500 mr-2">•</span>
+                      <span className="text-cursor-accent mr-1.5">•</span>
                       <span>{pub}</span>
                     </li>
                   ))}

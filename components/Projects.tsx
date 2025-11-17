@@ -55,47 +55,47 @@ export default function Projects() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12"
+      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
     >
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-4xl font-bold text-slate-800 dark:text-white mb-8"
+        className="text-2xl font-bold text-cursor-text mb-4"
       >
         Projects
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-700 dark:to-slate-800 rounded-xl p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+            className="bg-cursor-bg rounded-lg p-4 border border-cursor-border hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
           >
-            <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-3">
+            <h3 className="text-lg font-bold text-cursor-text mb-2">
               {project.title}
             </h3>
-            <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+            <p className="text-sm text-cursor-textSecondary mb-3 leading-relaxed">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-1.5 mb-3">
               {project.technologies.map((tech, techIndex) => (
                 <span
                   key={techIndex}
-                  className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm"
+                  className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               {project.link && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium"
+                  className="px-3 py-1.5 bg-cursor-accent hover:bg-cursor-accentHover text-white rounded-lg transition-colors text-xs font-medium"
                 >
                   Live Demo
                 </a>
@@ -105,7 +105,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white rounded-lg transition-colors font-medium"
+                  className="px-3 py-1.5 bg-cursor-border hover:bg-cursor-textSecondary text-white rounded-lg transition-colors text-xs font-medium"
                 >
                   GitHub
                 </a>

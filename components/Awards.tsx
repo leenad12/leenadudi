@@ -101,56 +101,56 @@ export default function Awards() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12"
+      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
     >
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-4xl font-bold text-slate-800 dark:text-white mb-8"
+        className="text-2xl font-bold text-cursor-text mb-4"
       >
         Honors & Awards
       </motion.h2>
-      <div className="space-y-6">
+      <div className="space-y-3">
         {awards.map((award, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-xl p-6 border-l-4 border-amber-500 dark:border-amber-400 hover:shadow-lg transition-shadow"
+            className="bg-cursor-bg rounded-lg p-4 border-l-4 border-cursor-accent border border-cursor-border hover:shadow-lg transition-shadow"
           >
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-2">
+                <h3 className="text-lg font-bold text-cursor-text mb-1.5">
                   {award.title}
                 </h3>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm">
-                  <p className="text-amber-600 dark:text-amber-400 font-medium">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 text-xs">
+                  <p className="text-cursor-accent font-medium">
                     {award.issuer}
                   </p>
-                  <span className="text-slate-500 dark:text-slate-400">
+                  <span className="text-cursor-textSecondary">
                     {award.date}
                   </span>
                   {award.associatedWith && (
-                    <span className="text-slate-500 dark:text-slate-400 italic">
+                    <span className="text-cursor-textSecondary italic">
                       • {award.associatedWith}
                     </span>
                   )}
                 </div>
               </div>
             </div>
-            <p className="text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">
+            <p className="text-sm text-cursor-textSecondary mb-2 leading-relaxed">
               {award.description}
             </p>
             {award.highlights && award.highlights.length > 0 && (
-              <div className="mt-4 pt-4 border-t border-amber-200 dark:border-amber-800">
-                <ul className="space-y-2">
+              <div className="mt-3 pt-3 border-t border-cursor-border">
+                <ul className="space-y-1.5">
                   {award.highlights.map((highlight, highlightIndex) => (
                     <li
                       key={highlightIndex}
-                      className="text-sm text-slate-600 dark:text-slate-400 flex items-start"
+                      className="text-xs text-cursor-textSecondary flex items-start"
                     >
-                      <span className="text-amber-500 dark:text-amber-400 mr-2 font-bold">
+                      <span className="text-cursor-accent mr-1.5 font-bold">
                         •
                       </span>
                       <span>{highlight}</span>

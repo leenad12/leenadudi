@@ -8,7 +8,7 @@ export default function AboutMe() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12"
+      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
     >
       <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
         <motion.div
@@ -17,16 +17,18 @@ export default function AboutMe() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="flex-shrink-0"
         >
-          <div className="w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-6xl font-bold shadow-lg">
-            LD
-          </div>
+          <img
+            src="/headshot.jpg"
+            alt="Leena Dudi"
+            className="w-36 h-36 rounded-full object-cover shadow-lg border-4 border-cursor-accent"
+          />
         </motion.div>
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-4">
           <motion.h2
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl font-bold text-slate-800 dark:text-white"
+            className="text-2xl font-bold text-cursor-text"
           >
             About Me
           </motion.h2>
@@ -34,7 +36,7 @@ export default function AboutMe() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+            className="text-sm text-cursor-textSecondary leading-relaxed"
           >
             I'm a student at MIT pursuing a Bachelor of Science in AI & Decision Making (Course 6-4)
             and Business Analytics (Course 15-2), expected to graduate in May 2029. My passion lies
@@ -44,7 +46,7 @@ export default function AboutMe() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+            className="text-sm text-cursor-textSecondary leading-relaxed"
           >
             I've had the privilege of working with organizations like NASA, MIT Lincoln Laboratory,
             and conducting research at MIT Sports Lab and Urban Risk Lab. As a U.S. Presidential Scholar,
@@ -58,56 +60,56 @@ export default function AboutMe() {
             className="pt-4 space-y-4"
           >
             <div>
-              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">Education</h3>
+              <h3 className="text-base font-bold text-cursor-text mb-2">Education</h3>
               <div className="space-y-3">
-                <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4">
-                  <p className="font-semibold text-slate-800 dark:text-white">
+                <div className="bg-cursor-bg rounded-lg p-3 border border-cursor-border">
+                  <p className="font-semibold text-cursor-text text-sm">
                     Massachusetts Institute of Technology
                   </p>
-                  <p className="text-slate-600 dark:text-slate-300">
+                  <p className="text-cursor-textSecondary text-xs mt-1">
                     Bachelor of Science in AI & Decision Making (Course 6-4) + Business Analytics (Course 15-2)
                   </p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Expected: May 2029</p>
+                  <p className="text-xs text-cursor-textSecondary mt-1">Expected: May 2029</p>
                 </div>
-                <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4">
-                  <p className="font-semibold text-slate-800 dark:text-white">
+                <div className="bg-cursor-bg rounded-lg p-3 border border-cursor-border">
+                  <p className="font-semibold text-cursor-text text-sm">
                     Blue Valley West High School
                   </p>
-                  <p className="text-slate-600 dark:text-slate-300">
+                  <p className="text-cursor-textSecondary text-xs mt-1">
                     GPA: 4.8571/4.0000 | ACT: 36/36 | 5/5 on 11 AP Exams
                   </p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">May 2025</p>
+                  <p className="text-xs text-cursor-textSecondary mt-1">May 2025</p>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+              <h3 className="text-base font-bold text-cursor-text mb-2">Skills</h3>
+              <div className="flex flex-wrap gap-1.5">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   Java
                 </span>
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   Python
                 </span>
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   SQL
                 </span>
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   Dart (Flutter)
                 </span>
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   C++
                 </span>
-                <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   Machine Learning
                 </span>
-                <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   Data Science
                 </span>
-                <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   TensorFlow Lite
                 </span>
-                <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                <span className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs font-medium">
                   Google Earth Engine
                 </span>
               </div>

@@ -65,52 +65,52 @@ export default function Experience() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12"
+      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
     >
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-4xl font-bold text-slate-800 dark:text-white mb-8"
+        className="text-2xl font-bold text-cursor-text mb-4"
       >
         Experience
       </motion.h2>
-      <div className="space-y-8">
+      <div className="space-y-4">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="relative pl-8 border-l-2 border-blue-500 dark:border-blue-400"
+            className="relative pl-6 border-l-2 border-cursor-accent"
           >
-            <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 dark:bg-blue-400 rounded-full"></div>
-            <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div className="absolute -left-1.5 top-0 w-3 h-3 bg-cursor-accent rounded-full"></div>
+            <div className="bg-cursor-bg rounded-lg p-4 border border-cursor-border hover:shadow-lg transition-shadow">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-800 dark:text-white">
+                  <h3 className="text-lg font-bold text-cursor-text">
                     {exp.title}
                   </h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">
+                  <p className="text-sm text-cursor-accent font-medium">
                     {exp.company}
                   </p>
                   {exp.location && (
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-cursor-textSecondary mt-0.5">
                       {exp.location}
                     </p>
                   )}
                 </div>
-                <span className="text-slate-500 dark:text-slate-400 font-medium mt-2 md:mt-0">
+                <span className="text-cursor-textSecondary text-xs font-medium mt-2 md:mt-0">
                   {exp.period}
                 </span>
               </div>
-              <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              <p className="text-sm text-cursor-textSecondary mb-3 leading-relaxed">
                 {exp.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {exp.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm"
+                    className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs"
                   >
                     {tech}
                   </span>

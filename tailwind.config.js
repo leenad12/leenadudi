@@ -5,9 +5,21 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        cursor: {
+          bg: '#0d1117',
+          surface: '#161b22',
+          border: '#30363d',
+          accent: '#8b5cf6',
+          accentHover: '#7c3aed',
+          text: '#c9d1d9',
+          textSecondary: '#8b949e',
+          purple: '#8b5cf6',
+          blue: '#58a6ff',
+        },
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
