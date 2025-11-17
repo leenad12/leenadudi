@@ -6,7 +6,7 @@ interface Award {
   title: string
   issuer: string
   date: string
-  description: string
+  description?: string
   associatedWith?: string
   highlights?: string[]
 }
