@@ -9,16 +9,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cursor: {
-          bg: '#0d1117',
-          surface: '#161b22',
-          border: '#30363d',
-          accent: '#8b5cf6',
-          accentHover: '#7c3aed',
-          text: '#c9d1d9',
-          textSecondary: '#8b949e',
-          purple: '#8b5cf6',
-          blue: '#58a6ff',
+        theme: {
+          navyDark: '#0a1929',
+          navy: '#132f4c',
+          navyMedium: '#1e3a5f',
+          navyLight: '#2a4a6b',
+          navyLighter: '#3d5a7a',
+          navyAccent: '#4a7ba7',
+          // Convenience aliases
+          bg: '#0a1929',
+          surface: '#132f4c',
+          border: '#1e3a5f',
+          accent: '#4a7ba7',
+          accentHover: '#3d5a7a',
+          text: '#e8f4f8',
+          textSecondary: '#b8d4e0',
         },
         primary: {
           50: '#f0f9ff',

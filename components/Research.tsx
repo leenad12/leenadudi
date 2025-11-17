@@ -43,12 +43,12 @@ export default function Research() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
+      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
     >
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-2xl font-bold text-cursor-text mb-4"
+        className="text-3xl font-bold text-theme-text mb-6"
       >
         Research
       </motion.h2>
@@ -59,36 +59,36 @@ export default function Research() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-cursor-bg rounded-lg p-4 border-l-4 border-cursor-accent border border-cursor-border"
+            className="bg-theme-surface rounded-lg p-5 border-l-4 border-theme-accent border border-theme-border"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <div>
-                <h3 className="text-lg font-bold text-cursor-text mb-1.5">
+                <h3 className="text-xl font-bold text-theme-text mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-cursor-accent font-medium">
+                <p className="text-base text-theme-accent font-medium">
                   {item.institution}
                 </p>
               </div>
-              <span className="text-cursor-textSecondary text-xs font-medium mt-2 md:mt-0">
+              <span className="text-theme-textSecondary text-sm font-medium mt-2 md:mt-0">
                 {item.year}
               </span>
             </div>
-            <p className="text-sm text-cursor-textSecondary mb-3 leading-relaxed">
+            <p className="text-base text-theme-textSecondary mb-4 leading-relaxed">
               {item.description}
             </p>
             {item.publications && item.publications.length > 0 && (
-              <div className="mt-3 pt-3 border-t border-cursor-border">
-                <h4 className="font-semibold text-cursor-text text-xs mb-1.5">
+              <div className="mt-4 pt-4 border-t border-theme-border">
+                <h4 className="font-semibold text-theme-text text-sm mb-2">
                   Publications:
                 </h4>
-                <ul className="space-y-1.5">
+                <ul className="space-y-2">
                   {item.publications.map((pub, pubIndex) => (
                     <li
                       key={pubIndex}
-                      className="text-xs text-cursor-textSecondary flex items-start"
+                      className="text-sm text-theme-textSecondary flex items-start"
                     >
-                      <span className="text-cursor-accent mr-1.5">•</span>
+                      <span className="text-theme-accent mr-2">•</span>
                       <span>{pub}</span>
                     </li>
                   ))}

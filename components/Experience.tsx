@@ -31,15 +31,6 @@ const experiences: ExperienceItem[] = [
     technologies: ['Flutter', 'TensorFlow Lite', 'YOLOv8', 'Python', 'Machine Learning'],
   },
   {
-    title: 'Technology Student Researcher',
-    company: 'MIT Lincoln Laboratory',
-    period: 'July 2024',
-    location: 'Lexington, MA',
-    description:
-      'Selected as 1 of 26 students to attend free residential program "LLRISE". Designed and built a radar system from scratch with Doppler and Synthetic Aperture capabilities. Developed experiments highlighting each radar function and presented to 150+ professionals.',
-    technologies: ['Radar Systems', 'Doppler', 'Synthetic Aperture', 'Hardware Design'],
-  },
-  {
     title: 'Financial Data Analysis Intern',
     company: 'Kiewit Engineering',
     period: 'June - July 2024',
@@ -65,12 +56,12 @@ export default function Experience() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-cursor-surface rounded-xl shadow-xl p-5 md:p-6 border border-cursor-border"
+      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
     >
       <motion.h2
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        className="text-2xl font-bold text-cursor-text mb-4"
+        className="text-3xl font-bold text-theme-text mb-6"
       >
         Experience
       </motion.h2>
@@ -81,36 +72,36 @@ export default function Experience() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="relative pl-6 border-l-2 border-cursor-accent"
+            className="relative pl-8 border-l-2 border-theme-accent"
           >
-            <div className="absolute -left-1.5 top-0 w-3 h-3 bg-cursor-accent rounded-full"></div>
-            <div className="bg-cursor-bg rounded-lg p-4 border border-cursor-border hover:shadow-lg transition-shadow">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+            <div className="absolute -left-2 top-0 w-4 h-4 bg-theme-accent rounded-full"></div>
+            <div className="bg-theme-surface rounded-lg p-5 border border-theme-border hover:shadow-lg transition-shadow">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
-                  <h3 className="text-lg font-bold text-cursor-text">
+                  <h3 className="text-xl font-bold text-theme-text">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-cursor-accent font-medium">
+                  <p className="text-base text-theme-accent font-medium">
                     {exp.company}
                   </p>
                   {exp.location && (
-                    <p className="text-xs text-cursor-textSecondary mt-0.5">
+                    <p className="text-sm text-theme-textSecondary mt-0.5">
                       {exp.location}
                     </p>
                   )}
                 </div>
-                <span className="text-cursor-textSecondary text-xs font-medium mt-2 md:mt-0">
+                <span className="text-theme-textSecondary text-sm font-medium mt-2 md:mt-0">
                   {exp.period}
                 </span>
               </div>
-              <p className="text-sm text-cursor-textSecondary mb-3 leading-relaxed">
+              <p className="text-base text-theme-textSecondary mb-4 leading-relaxed">
                 {exp.description}
               </p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {exp.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-2.5 py-1 bg-cursor-bg border border-cursor-border text-cursor-text rounded-full text-xs"
+                    className="px-3 py-1.5 bg-theme-surface border border-theme-border text-theme-text rounded-full text-sm"
                   >
                     {tech}
                   </span>

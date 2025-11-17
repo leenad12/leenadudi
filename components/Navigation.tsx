@@ -3,58 +3,68 @@
 import { motion } from 'framer-motion'
 
 interface NavigationProps {
-  tabs: { id: string; label: string }[]
-  activeTab: string
-  setActiveTab: (tab: string) => void
+  sections: { id: string; label: string }[]
+  activeSection: string
+  scrollToSection: (sectionId: string) => void
 }
 
 export default function Navigation({
-  tabs,
-  activeTab,
-  setActiveTab,
+  sections,
+  activeSection,
+  scrollToSection,
 }: NavigationProps) {
   return (
-    <nav className="sticky top-0 z-50 bg-cursor-surface/95 backdrop-blur-lg border border-cursor-border rounded-lg shadow-sm mb-4">
-      <div className="flex flex-col sm:flex-row items-center justify-between p-3">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 mb-4 sm:mb-0"
-        >
-          <img
-            src="/headshot.jpg"
-            alt="Leena Dudi"
-            className="w-8 h-8 rounded-full object-cover border-2 border-cursor-accent shadow-md"
-          />
-          <h1 className="text-lg font-bold text-cursor-text">
-            Leena Dudi
-          </h1>
-        </motion.div>
-        <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
-          {tabs.map((tab) => (
-            <motion.button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`relative px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                activeTab === tab.id
-                  ? 'text-white'
-                  : 'text-cursor-textSecondary hover:text-cursor-accent'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {activeTab === tab.id && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute inset-0 bg-cursor-accent rounded-lg"
-                  initial={false}
-                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{tab.label}</span>
-            </motion.button>
-          ))}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-theme-surface border-b border-theme-border shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center h-16 gap-4">
+          <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            onClick={() => scrollToSection('about')}
+            className={`relative px-4 py-2 rounded-lg text-lg font-bold transition-all duration-300 ${
+              activeSection === 'about'
+                ? 'text-white'
+                : 'text-theme-text hover:opacity-80'
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {activeSection === 'about' && (
+              <motion.div
+                layoutId="activeSection"
+                className="absolute inset-0 bg-theme-accent rounded-lg"
+                initial={false}
+                transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+              />
+            )}
+            <span className="relative z-10">Leena Dudi</span>
+          </motion.button>
+          <div className="flex items-center gap-2">
+            {sections.map((section) => (
+              <motion.button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  activeSection === section.id
+                    ? 'text-white'
+                    : 'text-theme-textSecondary hover:text-theme-text'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {activeSection === section.id && (
+                  <motion.div
+                    layoutId="activeSection"
+                    className="absolute inset-0 bg-theme-accent rounded-lg"
+                    initial={false}
+                    transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{section.label}</span>
+              </motion.button>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

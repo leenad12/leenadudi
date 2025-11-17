@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navigation from '@/components/Navigation'
 import AboutMe from '@/components/AboutMe'
 import Experience from '@/components/Experience'
@@ -10,45 +10,82 @@ import Hobbies from '@/components/Hobbies'
 import Awards from '@/components/Awards'
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('about')
+  const [activeSection, setActiveSection] = useState('about')
 
-  const tabs = [
-    { id: 'about', label: 'About Me' },
+  const sections = [
+    { id: 'research', label: 'Research' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'research', label: 'Research' },
     { id: 'awards', label: 'Awards' },
     { id: 'hobbies', label: 'Hobbies' },
   ]
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'about':
-        return <AboutMe />
-      case 'experience':
-        return <Experience />
-      case 'projects':
-        return <Projects />
-      case 'research':
-        return <Research />
-      case 'awards':
-        return <Awards />
-      case 'hobbies':
-        return <Hobbies />
-      default:
-        return <AboutMe />
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200
+
+      // Check all sections including 'about'
+      const allSections = [{ id: 'about' }, ...sections]
+
+      for (const section of allSections) {
+        const element = document.getElementById(section.id)
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section.id)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [sections])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
     }
   }
 
   return (
-    <main className="min-h-screen bg-cursor-bg" style={{ zoom: 0.8 }}>
-      <div className="container mx-auto px-3 py-4 max-w-7xl">
-        <Navigation
-          tabs={tabs}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-        <div className="mt-4 animate-fade-in">{renderContent()}</div>
+    <main className="min-h-screen bg-theme-bg">
+      <Navigation
+        sections={sections}
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+      />
+      <div className="pt-20">
+        <section id="about">
+          <AboutMe />
+        </section>
+        <section id="research">
+          <Research />
+        </section>
+        <section id="experience">
+          <Experience />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="awards">
+          <Awards />
+        </section>
+        <section id="hobbies">
+          <Hobbies />
+        </section>
       </div>
     </main>
   )
